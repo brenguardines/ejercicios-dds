@@ -30,13 +30,13 @@ public class Disponibilidad {
   private Prestador prestador;
 
   @Column(name = "horaInicio", columnDefinition = "TIME")
-  private LocalTime horaInicio;
+  private LocalTime horaInicio; //Aca utilizo el converter de forma implicita
 
   @Column(name = "horaFin", columnDefinition = "TIME")
   private LocalTime horaFin;
 
   //@Enumerated(EnumType.STRING) //EnumType.STRING para literal
-  @Convert(converter = DiaSemanaAttributeConverter.class)
+  @Convert(converter = DiaSemanaAttributeConverter.class) //Aca utilizo el converter de forma explicita
   @Column(name = "dia")
   private DayOfWeek dia;
 }

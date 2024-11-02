@@ -35,7 +35,7 @@ public class ServicioOfrecido {
   @Column(name = "experiencias", columnDefinition = "TEXT")
   private String experiencias;
 
-  @ElementCollection
+  @ElementCollection //Se usa ElementCollection junto con CollectionTable para mapear datos primitivos
   @CollectionTable(name = "servicio_ofrecido_foto", joinColumns = @JoinColumn(name = "servicioOfrecido_id"))
   @Column(name = "foto")
   private List<String> fotos;
