@@ -60,4 +60,8 @@ public class Trabajo extends Persistente {
 
   @Column(name = "finalizadosSegunPrestador")
   private Boolean finalizadosSegunPrestador;
+
+  //Caso de Desnormalización por consistencia de datos (para no perder referencia del dato que me importa)
+  @Column
+  private Float precioDeContratacion;
 }

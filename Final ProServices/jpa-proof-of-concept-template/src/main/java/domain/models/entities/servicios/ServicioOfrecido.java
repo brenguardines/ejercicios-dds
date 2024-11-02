@@ -39,4 +39,8 @@ public class ServicioOfrecido {
   @CollectionTable(name = "servicio_ofrecido_foto", joinColumns = @JoinColumn(name = "servicioOfrecido_id"))
   @Column(name = "foto")
   private List<String> fotos;
+
+  //Caso de Desnormalización por consistencia de datos
+  @Column
+  private Float precio;
 }

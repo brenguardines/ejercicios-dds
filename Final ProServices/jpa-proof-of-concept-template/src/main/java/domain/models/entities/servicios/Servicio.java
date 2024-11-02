@@ -42,12 +42,19 @@ public class Servicio {
   //La tabla tarea es la que va a tener una columna llamada servicio_id y la cual es FK
   private List<Tarea> tareas;
 
+  //Caso de Desnormalización forzada por performance
+  @Column
+  private Integer cantDeTareas;
+
   public Servicio(){
     this.tareas = new ArrayList<>();
   }
 
   public void agregarTareas(Tarea ... tareas){
     Collections.addAll(this.tareas, tareas);
+
+    //Caso de Desnormalización forzada por performance
+    this.cantDeTareas = this.tareas.size();
   }
 
   @Override
